@@ -4,7 +4,7 @@ const SampleButton = () => {
     return(<StandardButton
         icon={require('../../assets/images/react-logo.png')} 
         text='What' 
-        action={() => {console.log('Balls')}}
+        action={() => {console.log('Ballers')}}
       ></StandardButton>
     )
 }
