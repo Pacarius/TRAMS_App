@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
         height: 100,
         width: 100,
         borderRadius: 100,
-        backgroundColor: Colors.button.backgroundColor,
+        backgroundColor: Colors.backgroundColor,
         borderColor: Colors.button.borderColor
     },
     icon: {
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
         textAlign: 'center'
     }
 })
-const StandardButton = (props: ButtonProps) => {
+const S_Button = (props: ButtonProps) => {
     return (
         <View style={styles.center}>
                 <TouchableOpacity
@@ -43,4 +43,4 @@ const StandardButton = (props: ButtonProps) => {
     )
 }
 
-export default StandardButton;
+export default S_Button;

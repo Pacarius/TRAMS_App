@@ -1,11 +1,12 @@
-import StandardButton from "../StandardButton"
+import S_Button from "../Templates/S_Button"
 
 const SampleButton = () => {
-    return(<StandardButton
+    return(<S_Button
         icon={require('../../assets/images/react-logo.png')} 
         text='What' 
         action={() => {console.log('Ballers')}}
-      ></StandardButton>
+        key={1}
+      ></S_Button>
     )
 }
 

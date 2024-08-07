@@ -1,18 +1,24 @@
-import SampleButton from "@/components/Buttons/SampleButton";
-import StandardButton from "@/components/StandardButton";
-import { Text, View, StyleSheet } from "react-native";
+import SampleCategory from "@/components/Categories/SampleCategory";
+import { Text, View, StyleSheet, ScrollView } from "react-native";
 const styles = StyleSheet.create({
   index:{
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
+  },
+  container:{
+    alignItems: 'center',
+    rowGap: 16
   }
 })
 export default function Index() {
   return (
-    <View style={styles.index}>
+    <ScrollView style={styles.index}
+    contentContainerStyle={styles.container}>
       <Text>CBT.</Text>
-      <SampleButton></SampleButton>
-    </View>
+      <SampleCategory log='1'></SampleCategory>
+      <SampleCategory log='2'></SampleCategory>
+      <SampleCategory log='3'></SampleCategory>
+      <SampleCategory log='4'></SampleCategory>
+      <SampleCategory log='5'></SampleCategory>
+    </ScrollView>
   );
 }
