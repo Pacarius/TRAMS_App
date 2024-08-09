@@ -9,8 +9,8 @@ type CProp ={
 const SampleCategory = (props : CProp) => {
     return(<S_Category
         title='Ech.' 
-        ex_Icon={require('../../assets/images/react-logo.png')} 
-        ex_action={() => {console.log(props.log)}}
+        ex_Icon={require('@/assets/example/images/react-logo.png')} 
+        ex_Action={() => {console.log(props.log)}}
         contents={[SampleButton()]}
         fontColor={Colors.button.iconTextColor}
       ></S_Category>

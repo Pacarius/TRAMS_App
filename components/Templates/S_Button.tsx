@@ -1,31 +1,11 @@
-import { Colors } from "@/constants/Colors";
-import { Text, View , Image, StyleSheet, ImageSourcePropType, TouchableOpacity} from "react-native";
+import { styles } from "@/constants/styles/button";
+import { Text, View , Image, ImageSourcePropType, TouchableOpacity} from "react-native";
 type ButtonProps = {
     icon: ImageSourcePropType;
     text: string;
     action: () => void;
 }
 
-const styles = StyleSheet.create({
-    center: {
-        alignItems: 'center',
-        justifyContent: 'center',
-        borderWidth: 2,
-        height: 100,
-        width: 100,
-        borderRadius: 100,
-        backgroundColor: Colors.backgroundColor,
-        borderColor: Colors.button.borderColor
-    },
-    icon: {
-        height: 57,
-        width: 57
-    },
-    text: {
-        color: Colors.button.iconTextColor,
-        textAlign: 'center'
-    }
-})
 const S_Button = (props: ButtonProps) => {
     return (
         <View style={styles.center}>
