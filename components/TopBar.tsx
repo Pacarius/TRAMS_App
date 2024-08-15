@@ -9,12 +9,14 @@ const TopBar = (props: BarProps) => {
     const router = useRouter()
     return (
         <View style={styles.standard}>
-            <TouchableOpacity onPress={() => router.dismiss()}>
+            <TouchableOpacity onPress={() => router.back()}>
                 <Image source={require('@/assets/common/back-icon.png')}
                     style={{resizeMode:'contain', height:30}}
                 ></Image>
             </TouchableOpacity>
-            <Image source={require('@/assets/common/trams-logo.png')}></Image>
+            <TouchableOpacity onPress={() => router.push('home')}>
+                <Image source={require('@/assets/common/trams-logo.png')}></Image>
+            </TouchableOpacity>
             {props.ex_Action ? <TouchableOpacity onPress={props.ex_Action}>
                 {props.ex_Icon && <Image source={props.ex_Icon}/>} 
                 </TouchableOpacity>
