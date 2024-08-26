@@ -1,4 +1,4 @@
 import { Redirect } from "expo-router";
 export default function Index() {
-  return <Redirect href="test1"></Redirect>;
+  return <Redirect href="vehicle_details"></Redirect>;
 }
