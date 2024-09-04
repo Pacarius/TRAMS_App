@@ -2,7 +2,8 @@ import { Text, ScrollView, View, StyleSheet, useWindowDimensions, Image, Pressab
 import { styles } from "@/constants/styles";
 import TopBar from "@/components/TopBar";
 import React, { useState } from 'react';
-import { ApiHandler, VehicleType } from "@/api/apiHandler";
+import { ApiHandler} from "@/api/apiHandler";
+import { VehicleType } from "@/api/datatypes/vehicle";
 
 export default function vehicle_details() {
   const { width, height } = useWindowDimensions();
@@ -23,7 +24,7 @@ export default function vehicle_details() {
   const api = new ApiHandler();
   const vehicle = api.getVehicleInfo();
   const id = vehicle.vehicleID;
-  const expiryDate = vehicle.expiryDate;
+  // const expiryDate = vehicle.expiryDate;
   const nameType = (type: VehicleType) => {
     switch (type) {
       case VehicleType.CAR: return "私家車";
@@ -111,10 +112,10 @@ export default function vehicle_details() {
           { backgroundColor: 'transparent'}]}>
           </View>
         : null}
-        <View style={[styles2.container, { width: rect_width}]}>
+        {/* <View style={[styles2.container, { width: rect_width}]}>
           <Text style={styles2.left_text}>車牌屆滿日期</Text>
           <Text style={[styles2.right_text, { color: theme_color}]}>{expiryDate}</Text>
-        </View>
+        </View> */}
         <View style={[styles2.container, { width: rect_width}]}>
           <Text style={styles2.left_text}>類別</Text>
           <Text style={[styles2.right_text, { color: theme_color}]}>{type}</Text>
