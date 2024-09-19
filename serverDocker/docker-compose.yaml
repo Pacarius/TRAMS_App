@@ -1,0 +1,41 @@
+# version: '0.1'
+services:
+  db:
+    image: pacificguardian/db
+    environment:
+      MYSQL_TCP_PORT: 6969
+      TZ : Asia/Hong_Kong
+   # command: --default-authentication-plugin=mysql_native_password
+    volumes:
+      - data:/var/lib/mysql
+    ports:
+      - "6969:6969"
+    hostname: db
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      start_period: 10s
+      interval: 10s
+      timeout: 5s
+      retries: 3
+  # api:
+  #   image: pacificguardian/api
+  #   ports:
+  #     - "9696:9696"
+  #   depends_on:
+  #     - db
+  server:
+   image: pacificguardian/server
+   volumes:
+      - ./config:/App/config
+   ports:
+     - "42069:42069"
+     - "9696:9696"
+   depends_on:
+     db:
+      condition: service_healthy
+   stdin_open: true
+   tty: true
+   restart: on-failure
+volumes:
+  data:
+  # config:

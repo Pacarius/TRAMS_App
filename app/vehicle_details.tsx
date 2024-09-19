@@ -61,8 +61,8 @@ export default function vehicle_details() {
   };
   function find_icon (type: VehicleType) {
     switch (type) {
-      case VehicleType.CAR: return require('@/assets/example/images/car.png');
-      case VehicleType.MOTORCYCLE: return require('@/assets/example/images/motorcycle.png');
+      case VehicleType.CAR: return require('@/assets/vehicleicons/car.png');
+      case VehicleType.MOTORCYCLE: return require('@/assets/vehicleicons/motorcycle.png');
       default: return require('@/assets/common/trams-logo.png');
     }
   };

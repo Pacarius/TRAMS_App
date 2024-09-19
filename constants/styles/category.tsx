@@ -9,7 +9,7 @@ export const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'stretch',
-        padding: 8,
+        paddingHorizontal: 8,
     },
     outer: {
         backgroundColor: Colors.backgroundColor,
